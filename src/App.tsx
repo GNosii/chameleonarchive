@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
 import FrontendWrapper from './components/FrontendWrapper';
-import ListingContainer from './components/ListingContainer';
+
+import Listing from './views/base/Listing';
 
 const base = 'http://127.0.0.1:3085/api'
 
@@ -10,25 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <Sidebar />
-      <Routes>
-        <Route path="/">
-          <FrontendWrapper>
-            <h2>Testing, yk</h2>
-          </FrontendWrapper>
-        </Route>
-        <Route path="/residents">
-          <h2>Residents</h2>
-          <ListingContainer endpoint={base + '/residents'} />
-        </Route>
-        <Route path="/towns">
-          <h2>Towns</h2>
-          <ListingContainer endpoint={base + '/towns'} />
-        </Route>
-        <Route path="/nations">
-          <h2>Nations</h2>
-          <ListingContainer endpoint={base + '/nations'} />
-        </Route>
-      </Routes>
+      <FrontendWrapper>
+        <Routes>
+          <Route path="/" element={<h2>Homepage</h2>} />
+          <Route path="/residents" element={<Listing name='Residents' dataEndpoint={base + '/residents'} />} />
+          <Route path="/towns" element={<Listing name='Towns' dataEndpoint={base + '/towns'} />} />
+          <Route path="/nations" element={<Listing name='Nations' dataEndpoint={base + '/nations'} />} />
+        </Routes>
+      </FrontendWrapper>
     </BrowserRouter>
   );
 }
