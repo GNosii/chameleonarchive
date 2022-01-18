@@ -4,10 +4,6 @@ import ListingContainer from '../../components/ListingContainer';
 import ListingViewProps from '../../interfaces/props/ListingViewProps';
 
 export default class Listing extends Component<ListingViewProps> {
-    constructor(props: ListingViewProps) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
