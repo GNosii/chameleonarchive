@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import ListProps from '../interfaces/props/ListProps';
 import ListState from '../interfaces/states/ListState';
-import ListItem from './ListItem';
+//import ListItem from './ListItem';
 
 export default class ListingContainer extends Component<ListProps, ListState> {
     constructor(props: ListProps) {
