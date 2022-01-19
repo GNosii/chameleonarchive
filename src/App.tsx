@@ -7,7 +7,6 @@ import FrontendWrapper from './components/FrontendWrapper';
 
 import Listing from './views/base/Listing';
 
-// @ts-ignore
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 export default class App extends Component {
