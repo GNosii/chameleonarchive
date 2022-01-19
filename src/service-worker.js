@@ -1,3 +1,7 @@
+/*
+i'd use the typescript version, 
+except i prefer to use native js for this kind of stuff as i can somewhat predict its output.
+*/
 import { clientsClaim } from 'workbox-core'
 import { ExpirationPlugin } from 'workbox-expiration'
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching'
