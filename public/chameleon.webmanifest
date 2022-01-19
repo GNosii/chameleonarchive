@@ -1,6 +1,7 @@
 {
-  "short_name": "TownyUI",
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "TownyUI Chameleon",
+  "short_name": "TownyUI",
   "description": "Chameleon frontend for TownyUI.",
   "icons": [
     {
@@ -19,8 +20,11 @@
       "sizes": "512x512"
     }
   ],
+  "display_override": ["standalone"],
+  "display": "minimal-ui",
+  "id": "TuiChameleon",
+  "scope": "/",
   "start_url": ".",
-  "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
