@@ -13,7 +13,7 @@ export default class ListingContainer extends Component<ListProps, ListState> {
   constructor(props: ListProps) {
     super(props);
 
-    endpoint = read_cookie('base') + this.props.endpoint;
+    endpoint = read_cookie('base') + this.props.endpoint.toLowerCase();
     console.debug('endpoint = ', endpoint);
 
     this.state = {
