@@ -1,26 +1,36 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Sidebar from './components/Sidebar';
-import FrontendWrapper from './components/FrontendWrapper';
+import Sidebar from './components/Sidebar'
+import FrontendWrapper from './components/FrontendWrapper'
 
-import Listing from './views/base/Listing';
+import Listing from './views/base/Listing'
 
 const base = 'http://127.0.0.1:3085/api'
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Sidebar />
       <FrontendWrapper>
-        <Routes>
-          <Route path="/" element={<h2>Homepage</h2>} />
-          <Route path="/residents" element={<Listing name='Residents' dataEndpoint={base + '/residents'} />} />
-          <Route path="/towns" element={<Listing name='Towns' dataEndpoint={base + '/towns'} />} />
-          <Route path="/nations" element={<Listing name='Nations' dataEndpoint={base + '/nations'} />} />
-        </Routes>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/residents">
+              <Listing name="Residents" dataEndpoint={base + '/residents'} />
+            </Route>
+            <Route path="/towns">
+              <Listing name="Towns" dataEndpoint={base + '/towns'} />
+            </Route>
+            <Route path="/nations">
+              <Listing name="Nations" dataEndpoint={base + '/nations'} />
+            </Route>
+            <Route exact path="/">
+              <h2>Homepage</h2>
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </FrontendWrapper>
-    </BrowserRouter>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App

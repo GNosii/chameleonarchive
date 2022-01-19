@@ -1,5 +1,5 @@
-import IProps from './IProps';
+import IProps from './IProps'
 
 export default interface ViewProps extends IProps {
-    name: string;
+  name: string
 }

@@ -1,0 +1,125 @@
+aside {
+  div.sidebar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: #b6b6b6;
+    overflow: hidden;
+    transition: width 200ms ease;
+
+    .items {
+      .item {
+        a {
+          display: none;
+        }
+      }
+    }
+  }
+
+  div.sidebar:hover {
+    width: 16rem;
+
+    .items {
+      .item {
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      filter: grayscale(100%) opacity(0.7);
+
+      /* Sidebar Links */
+      a {
+        text-decoration: none;
+      }
+
+      /* Sidebar Icons */
+      span {
+        min-width: 2rem;
+        margin: 0 1.5rem;
+        transition: 600ms;
+      }
+    }
+
+    .item:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+  }
+}
+
+div.sidebar.hidden {
+  width: 0rem;
+}
+
+@media only screen and (max-width: 600px) {
+  div.sidebar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .items {
+    flex-direction: row;
+
+    .item {
+      a {
+        justify-content: center;
+      }
+    }
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  div.sidebar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  div.sidebar:hover {
+    width: 16rem;
+  }
+
+  div.sidebar:hover .link-text {
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  div.sidebar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  div.sidebar:hover {
+    width: 16rem;
+
+    .items {
+      .item {
+        a {
+          display: inline;
+        }
+      }
+    }
+  }
+}

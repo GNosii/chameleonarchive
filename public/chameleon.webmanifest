@@ -1,6 +1,7 @@
 {
   "short_name": "TownyUI",
-  "name": "TownyUI Client",
+  "name": "TownyUI Chameleon",
+  "description": "Chameleon frontend for TownyUI.",
   "icons": [
     {
       "src": "favicon.ico",
