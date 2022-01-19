@@ -9,7 +9,7 @@ import './scripts/Frontend'
 
 import App from './App'
 
-import { unregister } from './serviceWorkerRegistration.js'
+import { unregister } from './ServiceWorkerRegistration'
 
 ReactDOM.render(
   <React.StrictMode>
