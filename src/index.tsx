@@ -18,4 +18,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-register((process.env.PUBLIC_URL = '/service-worker.js'));
+register(process.env.PUBLIC_URL + '/service-worker.js');
