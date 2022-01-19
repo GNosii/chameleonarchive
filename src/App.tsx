@@ -24,19 +24,19 @@ export default class App extends Component {
               <Route path="/residents">
                 <Listing
                   name="Residents"
-                  dataEndpoint={read_cookie('base') + '/residents'}
+                  dataEndpoint={read_cookie('base') + 'residents'}
                 />
               </Route>
               <Route path="/towns">
                 <Listing
                   name="Towns"
-                  dataEndpoint={read_cookie('base') + '/towns'}
+                  dataEndpoint={read_cookie('base') + 'towns'}
                 />
               </Route>
               <Route path="/nations">
                 <Listing
                   name="Nations"
-                  dataEndpoint={read_cookie('base') + '/nations'}
+                  dataEndpoint={read_cookie('base') + 'nations'}
                 />
               </Route>
               <Route exact path="/">
