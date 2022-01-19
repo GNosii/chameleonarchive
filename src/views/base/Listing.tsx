@@ -1,7 +1,7 @@
-import { Component } from 'react'
+import { Component } from 'react';
 
-import ListingContainer from '../../components/ListingContainer'
-import ListingViewProps from '../../interfaces/props/ListingViewProps'
+import ListingContainer from '../../components/ListingContainer';
+import ListingViewProps from '../../interfaces/props/ListingViewProps';
 
 export default class Listing extends Component<ListingViewProps> {
   render() {
@@ -10,6 +10,6 @@ export default class Listing extends Component<ListingViewProps> {
         <h2>{this.props.name}</h2>
         <ListingContainer endpoint={'' + this.props.name} />
       </div>
-    )
+    );
   }
 }

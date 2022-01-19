@@ -1,5 +1,5 @@
-import ViewProps from './ViewProps'
+import ViewProps from './ViewProps';
 
 export default interface ListingViewProps extends ViewProps {
-  dataEndpoint: string
+  dataEndpoint: string;
 }

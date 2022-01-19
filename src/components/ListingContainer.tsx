@@ -1,35 +1,35 @@
-import { Component } from 'react'
+import { Component } from 'react';
 
-import ListProps from '../interfaces/props/ListProps'
-import ListState from '../interfaces/states/ListState'
+import ListProps from '../interfaces/props/ListProps';
+import ListState from '../interfaces/states/ListState';
 //import ListItem from './ListItem';
 
 export default class ListingContainer extends Component<ListProps, ListState> {
   constructor(props: ListProps) {
-    super(props)
+    super(props);
 
     this.state = {
       data: null,
-    }
+    };
 
-    this.queryEndpoint()
+    this.queryEndpoint();
   }
 
   async queryEndpoint() {
     await fetch(this.props.endpoint)
       .then(async (res) => await res.json())
       .then((data) => {
-        console.log(data)
-        this.setState({ data: data.list })
+        console.log(data);
+        this.setState({ data: data.list });
       })
       .catch((reason: PromiseRejectionEvent) => {
-        console.error('Promise rejected > ' + reason)
-      })
+        console.error('Promise rejected > ' + reason);
+      });
   }
 
   render() {
     if (this.state.data !== null)
-      return <ul className="listing">{this.state.data}</ul>
+      return <ul className="listing">{this.state.data}</ul>;
     else
       return (
         <div>
@@ -38,6 +38,6 @@ export default class ListingContainer extends Component<ListProps, ListState> {
           </h2>
           <p>Check your DevTools console for more information.</p>
         </div>
-      )
+      );
   }
 }

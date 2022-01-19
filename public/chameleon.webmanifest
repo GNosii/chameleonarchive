@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "TownyUI Chameleon",
   "short_name": "TownyUI",
   "description": "Chameleon frontend for TownyUI.",

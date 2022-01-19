@@ -1,11 +1,11 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Sidebar from './components/Sidebar'
-import FrontendWrapper from './components/FrontendWrapper'
+import Sidebar from './components/Sidebar';
+import FrontendWrapper from './components/FrontendWrapper';
 
-import Listing from './views/base/Listing'
+import Listing from './views/base/Listing';
 
-const base = 'http://127.0.0.1:3085/api'
+const base = 'http://127.0.0.1:3085/api';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
         </BrowserRouter>
       </FrontendWrapper>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

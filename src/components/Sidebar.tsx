@@ -1,57 +1,59 @@
-import { Component } from 'react'
+import { Component } from 'react';
 
-import IProps from '../interfaces/props/IProps'
-import IState from '../interfaces/states/IState'
+import $ from 'cash-dom';
 
-import '../styles/sidebar.scss'
+import IProps from '../interfaces/props/IProps';
+import IState from '../interfaces/states/IState';
+
+import '../styles/sidebar.scss';
 
 class Sidebar extends Component<IProps, IState> {
   constructor(props: IProps) {
-    super(props)
+    super(props);
     this.state = {
       visible: true,
-    }
+    };
 
-    this.open = this.open.bind(this)
-    this.close = this.close.bind(this)
-    this.actuallyClose = this.actuallyClose.bind(this)
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.actuallyClose = this.actuallyClose.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        if (this.state.visible) this.actuallyClose()
-        else this.open()
+    $(document).on('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (this.state.visible) this.actuallyClose();
+        else this.open();
       }
-    })
-    this.open()
+    });
+    this.open();
   }
 
   open() {
-    this.setState({ visible: true })
+    this.setState({ visible: true });
 
-    console.debug('Opening Sidebar.')
-    document.querySelector<HTMLElement>('.sidebar')!.style.width = '250px'
-    document.querySelector('main')!.style.marginLeft = '250px'
+    console.debug('Opening Sidebar.');
 
-    document.querySelector('.items')!.classList.remove('hiding')
-    document.querySelector('main')!.classList.add('blurred')
+    $('.sidebar').removeClass('hidden');
+    document.querySelector('main')!.style.marginLeft = '250px';
+
+    $('main').addClass('blurred');
   }
 
   close(event: any) {
-    console.log(event)
-    this.actuallyClose()
+    console.log(event);
+    this.actuallyClose();
   }
 
   actuallyClose() {
-    this.setState({ visible: false })
+    this.setState({ visible: false });
 
-    console.debug('Closing sidebar.')
-    document.querySelector<HTMLElement>('.sidebar')!.style.width = '0'
-    document.querySelector('main')!.style.marginLeft = '0'
+    console.debug('Closing sidebar.');
 
-    document.querySelector('.items')!.classList.add('hiding')
-    document.querySelector('main')!.classList.remove('blurred')
+    $('.sidebar').addClass('hidden');
+    document.querySelector('main')!.style.marginLeft = '0';
+
+    $('main').removeClass('blurred');
   }
 
   render() {
@@ -77,8 +79,8 @@ class Sidebar extends Component<IProps, IState> {
           </div>
         </div>
       </aside>
-    )
+    );
   }
 }
 
-export default Sidebar
+export default Sidebar;
