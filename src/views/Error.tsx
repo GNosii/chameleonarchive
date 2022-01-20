@@ -25,7 +25,7 @@ export default class Error extends Component<ErrorPageProps> {
     return (
       <div>
         {this.getContent()}
-        <a onClick={history.back}>Go back</a>
+        <a onClick={window.history.back}>Go back</a>
       </div>
     );
   }
