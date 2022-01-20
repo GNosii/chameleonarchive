@@ -37,10 +37,13 @@ export default class ListingContainer extends Component<ListProps, ListState> {
   }
 
   render() {
+    var data = this.state.data;
+    console.debug(data);
+
     if (this.state.data !== null)
       return (
         <ul className="listing">
-          {this.state.data.list.map((object: any) => (
+          {data.map((object: any) => (
             <li>{object.name}</li>
           ))}
         </ul>
