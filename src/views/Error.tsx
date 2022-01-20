@@ -3,10 +3,6 @@ import { Component } from 'react';
 import ErrorPageProps from '../interfaces/props/ErrorPageProps';
 
 export default class Error extends Component<ErrorPageProps> {
-  constructor(props: ErrorPageProps) {
-    super(props);
-  }
-
   getContent() {
     switch (this.props.error) {
       case 404: {
@@ -25,7 +21,7 @@ export default class Error extends Component<ErrorPageProps> {
     return (
       <div>
         {this.getContent()}
-        <a onClick={window.history.back}>Go back</a>
+        <button onClick={window.history.back}>Go back</button>
       </div>
     );
   }
