@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, MouseEventHandler } from 'react';
 
 import ErrorPageProps from '../interfaces/props/ErrorPageProps';
 
@@ -8,7 +8,9 @@ export default class Error extends Component<ErrorPageProps> {
       case 404: {
         return (
           <>
-            <span className="material-icons-outlined">report</span>
+            <span className="material-icons material-icons-outlined">
+              report
+            </span>
             <h2>Not Found</h2>
             <p>This page does not exist.</p>
           </>
@@ -17,11 +19,14 @@ export default class Error extends Component<ErrorPageProps> {
     }
   }
 
+  goBack(event: any) {
+    window.history.back();
+  }
   render() {
     return (
       <div>
         {this.getContent()}
-        <button onClick={window.history.back}>Go back</button>
+        <button onClick={this.goBack}>Go back</button>
       </div>
     );
   }
