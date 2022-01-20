@@ -5,7 +5,10 @@ import { read_cookie } from 'sfcookies';
 
 import ListProps from '../interfaces/props/ListProps';
 import ListState from '../interfaces/states/ListState';
-//import ListItem from './ListItem';
+
+import TownItem from '../components/list/TownItem';
+
+import '../styles/lists.scss';
 
 var endpoint: string;
 
@@ -38,23 +41,29 @@ export default class ListingContainer extends Component<ListProps, ListState> {
 
   render() {
     console.debug(this.state.data);
-    if (this.state.data !== null)
-      return (
-        <ul className="listing">
-          {this.state.data.map((object: any) => (
-            <li>{object.name}</li>
-          ))}
-        </ul>
-      );
-    else
+    if (this.state.data !== null) {
+      switch (this.props.type) {
+        case 'towns': {
+          return (
+            <ul className="listing">
+              {this.state.data.map((object: any) => (
+                <TownItem
+                  townName={object.name}
+                  townNation={object.nation}
+                  townMayor={object.mayor}
+                />
+              ))}
+            </ul>
+          );
+        }
+      }
+    } else {
       return (
         <div>
-          <h2>
-            Could not load <code>{endpoint}</code>
-          </h2>
-          <p>Check your DevTools console for more information.</p>
+          <h2>Please wait...</h2>
           <code id="error"></code>
         </div>
       );
+    }
   }
 }

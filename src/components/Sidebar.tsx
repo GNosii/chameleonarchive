@@ -60,9 +60,7 @@ class Sidebar extends Component<IProps, IState> {
     return (
       <aside>
         <div className="sidebar">
-          <button className="close" onClick={this.close}>
-            <span className="material-icons">close</span>
-          </button>
+          <h2>TownyUI</h2>
           <div className="items">
             <div className="item">
               <span className="material-icons">face</span>

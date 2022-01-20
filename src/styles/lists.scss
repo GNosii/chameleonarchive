@@ -1,0 +1,18 @@
+div.li {
+  a {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .town {
+    .info {
+      display: inline-flex;
+      flex-direction: row;
+
+      span {
+        padding: 0.7em;
+      }
+    }
+  }
+}

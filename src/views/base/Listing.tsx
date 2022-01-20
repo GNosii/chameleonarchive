@@ -7,8 +7,11 @@ export default class Listing extends Component<ListingViewProps> {
   render() {
     return (
       <div>
-        <h2>{this.props.name}</h2>
-        <ListingContainer endpoint={'' + this.props.name} />
+        <h1>{this.props.name}</h1>
+        <ListingContainer
+          type={this.props.type}
+          endpoint={'' + this.props.name}
+        />
       </div>
     );
   }
