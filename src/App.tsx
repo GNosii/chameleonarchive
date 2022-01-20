@@ -8,6 +8,7 @@ import FrontendWrapper from './components/FrontendWrapper';
 import Listing from './views/base/Listing';
 
 import { bake_cookie, read_cookie } from 'sfcookies';
+import Error from './views/Error';
 
 export default class App extends Component {
   componentDidMount() {
@@ -43,7 +44,7 @@ export default class App extends Component {
                 <h2>Homepage</h2>
               </Route>
               <Route>
-                <h2>Not Found</h2>
+                <Error error={404} />
               </Route>
             </Switch>
           </BrowserRouter>
