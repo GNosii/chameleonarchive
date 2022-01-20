@@ -5,7 +5,7 @@ import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 // Manifest
-// @ts-ignore no-restricted-globals
+/* eslint-disable-next-line no-restricted-globals */
 precacheAndRoute(self.__WB_MANIFEST);
 
 // Offline page handling
