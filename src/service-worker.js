@@ -1,9 +1,3 @@
-/**
- * service worker for chameleon.
- */
-
-// @ts-nocheck
-
 import { precacheAndRoute, matchPrecache } from 'workbox-precaching';
 import { setCatchHandler, registerRoute } from 'workbox-routing';
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
@@ -11,6 +5,7 @@ import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 // Manifest
+// @ts-ignore no-restricted-globals
 precacheAndRoute(self.__WB_MANIFEST);
 
 // Offline page handling
