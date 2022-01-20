@@ -21,19 +21,19 @@ export default class App extends Component {
         <FrontendWrapper>
           <BrowserRouter>
             <Switch>
-              <Route path="/residents">
+              <Route exact path="/residents">
                 <Listing
                   name="Residents"
                   dataEndpoint={read_cookie('base') + 'residents'}
                 />
               </Route>
-              <Route path="/towns">
+              <Route exact path="/towns">
                 <Listing
                   name="Towns"
                   dataEndpoint={read_cookie('base') + 'towns'}
                 />
               </Route>
-              <Route path="/nations">
+              <Route exact path="/nations">
                 <Listing
                   name="Nations"
                   dataEndpoint={read_cookie('base') + 'nations'}
@@ -41,6 +41,9 @@ export default class App extends Component {
               </Route>
               <Route exact path="/">
                 <h2>Homepage</h2>
+              </Route>
+              <Route>
+                <h2>Not Found</h2>
               </Route>
             </Switch>
           </BrowserRouter>
