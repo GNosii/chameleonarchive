@@ -1,3 +1,9 @@
+/**
+ * service worker for chameleon.
+ */
+
+// @ts-nocheck
+
 import { precacheAndRoute, matchPrecache } from 'workbox-precaching';
 import { setCatchHandler, registerRoute } from 'workbox-routing';
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
