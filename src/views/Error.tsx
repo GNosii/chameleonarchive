@@ -1,4 +1,4 @@
-import { Component, MouseEventHandler } from 'react';
+import { Component } from 'react';
 
 import ErrorPageProps from '../interfaces/props/ErrorPageProps';
 
@@ -19,7 +19,7 @@ export default class Error extends Component<ErrorPageProps> {
     }
   }
 
-  goBack(event: any) {
+  goBack(_event: any) {
     window.history.back();
   }
   render() {
