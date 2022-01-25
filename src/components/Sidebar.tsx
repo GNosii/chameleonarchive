@@ -32,7 +32,7 @@ class Sidebar extends Component<IProps, IState> {
   open() {
     this.setState({ visible: true });
 
-    console.debug('Opening Sidebar.');
+    console.debug('[Debug-Sidebar] Opening Sidebar.');
 
     $('.sidebar').removeClass('hidden');
     document.querySelector('main')!.style.marginLeft = '250px';
@@ -48,7 +48,7 @@ class Sidebar extends Component<IProps, IState> {
   actuallyClose() {
     this.setState({ visible: false });
 
-    console.debug('Closing sidebar.');
+    console.debug('[Debug-Sidebar] Closing sidebar.');
 
     $('.sidebar').addClass('hidden');
     document.querySelector('main')!.style.marginLeft = '0';

@@ -5,14 +5,13 @@ div.li {
     font-weight: bold;
     text-decoration: none;
   }
-  .town {
-    .info {
-      display: inline-flex;
-      flex-direction: row;
 
-      span {
-        padding: 0.7em;
-      }
+  div.info {
+    display: inline-flex;
+    flex-direction: row;
+
+    span {
+      padding: 0.7em;
     }
   }
 }

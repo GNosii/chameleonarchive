@@ -6,7 +6,7 @@ export default class TownItem extends Component<TownItemProps> {
   render() {
     return (
       <div className="li">
-        <div className="town">
+        <div className="government">
           <a href={'/towns/' + this.props.townName}>
             {this.props.townName}{' '}
             <span className="material-icons material-icons-outlined">
