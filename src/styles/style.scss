@@ -12,6 +12,22 @@ body {
   font-family: var(--fonts-chameleon);
 }
 
+form {
+  input {
+    font-family: var(--fonts-chameleon);
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    transition: 100ms;
+  }
+
+  input.err {
+    border-color: red;
+  }
+}
+
 .blurred {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);

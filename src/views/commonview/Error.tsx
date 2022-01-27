@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import ErrorPageProps from '../interfaces/props/views/ErrorPageProps';
+import ErrorPageProps from '../../interfaces/props/views/ErrorPageProps';
 
 export default class Error extends Component<ErrorPageProps> {
   getContent() {

@@ -28,6 +28,7 @@ export default class ListingContainer extends Component<ListProps, ListState> {
     console.debug('[Query] Endpoint = ', endpoint);
     this.queryEndpoint();
   }
+
   async queryEndpoint() {
     await fetch(endpoint)
       .then(async (res) => await res.json())
