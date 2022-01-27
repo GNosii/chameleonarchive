@@ -12,10 +12,6 @@ import Error from './views/commonview/Error';
 import SetServerView from './views/SetServerView';
 
 export default class App extends Component {
-  constructor(props: any) {
-    super(props);
-  }
-
   componentDidMount() {
     if (read_cookie('newUser').length === 0) {
       bake_cookie('newUser', 'true');
