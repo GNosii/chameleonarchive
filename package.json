@@ -5,17 +5,18 @@
   "dependencies": {
     "cash-dom": "^8.1.0",
     "react": "^17.0.2",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "sass": "^1.48.0",
     "sfcookies": "^1.0.2",
     "typescript": "^4.5.4",
+    "workbox-cacheable-response": "^5.1.3",
     "workbox-core": "^5.1.3",
     "workbox-expiration": "^5.1.3",
     "workbox-precaching": "^5.1.3",
     "workbox-routing": "^5.1.3",
-    "workbox-strategies": "^5.1.3",
-    "workbox-cacheable-response": "^5.1.3"
+    "workbox-strategies": "^5.1.3"
   },
   "devDependencies": {
     "@types/node": "^16.11.19",

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { TownItemProps } from '../../interfaces/props/TownItemProps';
+import { TownItemProps } from '../../interfaces/props/list/TownItemProps';
 
 export default class TownItem extends Component<TownItemProps> {
   render() {

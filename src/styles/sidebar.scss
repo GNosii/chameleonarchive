@@ -7,10 +7,14 @@ aside {
     overflow: hidden;
     transition: width 200ms ease;
 
-    .items {
-      .item {
+    .brand {
+      visibility: hidden;
+    }
+
+    ul {
+      li {
         a {
-          display: none;
+          visibility: hidden;
         }
       }
     }
@@ -19,16 +23,21 @@ aside {
   div.sidebar:hover {
     width: 16rem;
 
-    .items {
-      .item {
+    .brand {
+      visibility: visible;
+      text-align: center;
+    }
+
+    ul {
+      li {
         a {
-          display: block;
+          visibility: visible;
         }
       }
     }
   }
 
-  .items {
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -36,17 +45,12 @@ aside {
     flex-direction: column;
     align-items: center;
 
-    .item {
+    li {
       width: 100%;
       display: flex;
       align-items: center;
       height: 5rem;
       filter: grayscale(100%) opacity(0.7);
-
-      /* Sidebar Links */
-      a {
-        text-decoration: none;
-      }
 
       /* Sidebar Icons */
       span {
@@ -64,62 +68,4 @@ aside {
 
 div.sidebar.hidden {
   width: 0rem;
-}
-
-@media only screen and (max-width: 600px) {
-  div.sidebar {
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-  }
-
-  .items {
-    flex-direction: row;
-
-    .item {
-      a {
-        justify-content: center;
-      }
-    }
-  }
-
-  main {
-    margin: 0;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  div.sidebar {
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-  }
-
-  div.sidebar:hover {
-    width: 16rem;
-  }
-
-  div.sidebar:hover .link-text {
-    display: inline;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  div.sidebar {
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-  }
-
-  div.sidebar:hover {
-    width: 16rem;
-
-    .items {
-      .item {
-        a {
-          display: inline;
-        }
-      }
-    }
-  }
 }

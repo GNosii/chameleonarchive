@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom';
 import './styles/style.scss';
 import './styles/keyframes.scss';
 
-import './scripts/Globals';
-import './scripts/Frontend';
-
 import App from './App';
 
 import { register } from './ServiceWorkerRegistration';

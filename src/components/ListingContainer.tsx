@@ -3,7 +3,7 @@ import $ from 'cash-dom';
 import { Component } from 'react';
 import { read_cookie } from 'sfcookies';
 
-import ListProps from '../interfaces/props/ListProps';
+import ListProps from '../interfaces/props/list/ListProps';
 import ListState from '../interfaces/states/ListState';
 
 import TownItem from '../components/list/TownItem';

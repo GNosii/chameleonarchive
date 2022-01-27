@@ -7,6 +7,10 @@ import IState from '../interfaces/states/IState';
 
 import '../styles/sidebar.scss';
 
+import { isMobile } from 'react-device-detect';
+
+// TODO RESPONSIVE
+// ON MOBILE DO NOT START WITH THIS OPEN!!
 class Sidebar extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
@@ -14,19 +18,33 @@ class Sidebar extends Component<IProps, IState> {
       visible: true,
     };
 
+    this.hoverOn = this.hoverOn.bind(this);
+    this.hoverOff = this.hoverOff.bind(this);
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
-    this.actuallyClose = this.actuallyClose.bind(this);
   }
 
   componentDidMount() {
-    $(document).on('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (this.state.visible) this.actuallyClose();
-        else this.open();
-      }
-    });
-    this.open();
+    if (!isMobile) {
+      console.debug('[Resp] Showing sidebar because isMobile is false.');
+      $(document).on('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          if (this.state.visible) this.close();
+          else this.open();
+        }
+      });
+      this.close();
+    } else {
+      console.debug('[Resp] Hiding sidebar because isMobile is true.');
+    }
+  }
+
+  hoverOn(_event: any) {
+    $('main').addClass('blurred');
+  }
+
+  hoverOff(_event: any) {
+    $('main').removeClass('blurred');
   }
 
   open() {
@@ -36,16 +54,9 @@ class Sidebar extends Component<IProps, IState> {
 
     $('.sidebar').removeClass('hidden');
     document.querySelector('main')!.style.marginLeft = '250px';
-
-    $('main').addClass('blurred');
   }
 
-  close(event: any) {
-    console.log(event);
-    this.actuallyClose();
-  }
-
-  actuallyClose() {
+  close() {
     this.setState({ visible: false });
 
     console.debug('[Debug-Sidebar] Closing sidebar.');
@@ -59,22 +70,28 @@ class Sidebar extends Component<IProps, IState> {
   render() {
     return (
       <aside>
-        <div className="sidebar">
-          <h2>TownyUI</h2>
-          <div className="items">
-            <div className="item">
-              <span className="material-icons">face</span>
-              <a href="/residents"> Residents</a>
-            </div>
-            <div className="item">
-              <span className="material-icons">location_city</span>
-              <a href="/towns"> Towns</a>
-            </div>
-            <div className="item">
-              <span className="material-icons">flag</span>
-              <a href="/nations"> Nations</a>
-            </div>
+        <div
+          className="sidebar"
+          onMouseOver={this.hoverOn}
+          onMouseOut={this.hoverOff}
+        >
+          <div className="brand">
+            <h2>TownyUI</h2>
           </div>
+          <ul>
+            <li>
+              <span className="material-icons">person</span>
+              <a href="/residents">Residents</a>
+            </li>
+            <li>
+              <span className="material-icons">location_city</span>
+              <a href="/towns">Towns</a>
+            </li>
+            <li>
+              <span className="material-icons">flag</span>
+              <a href="/nations">Nations</a>
+            </li>
+          </ul>
         </div>
       </aside>
     );
