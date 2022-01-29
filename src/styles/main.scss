@@ -1,20 +1,31 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-@import url(https://fonts.googleapis.com/css2?family=Inter&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap);
 
 :root {
   --fonts-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  --fonts-chameleon: 'Inter', var(--fonts-system);
+  --fonts-chameleon-primary: 'Roboto', var(--fonts-system);
+  --fonts-chameleon-secondary: 'Inter', var(--fonts-system);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonts-chameleon-primary);
+}
+
 body {
   margin: 0;
-  font-family: var(--fonts-chameleon);
+  font-family: var(--fonts-chameleon-secondary);
 }
 
 form {
   input {
-    font-family: var(--fonts-chameleon);
+    font-family: var(--fonts-chameleon-secondary);
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;

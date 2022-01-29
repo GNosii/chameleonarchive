@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Configuration scheme for Chameleon",
+  "properties": {
+    "Chameleon": {
+      "description": "Configuration regarding the frontend itself.",
+      "type": "object"
+    },
+    "External": {
+      "description": "Configuration regarding third parties (skin providers, and more).",
+      "type": "object",
+      "properties": {
+        "SkinProvider": {
+          "description": "Base URL for skin image queries.",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": ["Chameleon", "External"]
+}

@@ -31,16 +31,16 @@ export default class App extends Component {
                   <Redirect to={'/ssv'} />
                 </Route>
                 <Route exact path="/towns">
-                  <Redirect to={'/ssv/'} />
+                  <Redirect to={'/ssv'} />
                 </Route>
                 <Route exact path="/nations">
-                  <Redirect to={'/ssv/'} />
+                  <Redirect to={'/ssv'} />
                 </Route>
-                <Route exact path="/ssv/:urlTo">
+                <Route exact path="/ssv">
                   <SetServerView />
                 </Route>
                 <Route exact path="/">
-                  <Redirect to={'/ssv/'} />
+                  <Redirect to={'/ssv'} />
                 </Route>
                 <Route>
                   <Error error={404} />
@@ -69,7 +69,7 @@ export default class App extends Component {
                     dataEndpoint={read_cookie('base') + 'nations'}
                   />
                 </Route>
-                <Route exact path="/ssv/:urlTo">
+                <Route exact path="/ssv">
                   <Error error={-1} />
                 </Route>
                 <Route exact path="/">

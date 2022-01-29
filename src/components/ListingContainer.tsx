@@ -1,5 +1,3 @@
-import $ from 'cash-dom';
-
 import { Component } from 'react';
 import { read_cookie } from 'sfcookies';
 
@@ -45,7 +43,6 @@ export default class ListingContainer extends Component<ListProps, ListState> {
           data: null,
           isError: true,
         });
-        $('#error').text = reason.reason;
       });
   }
 
@@ -100,14 +97,17 @@ export default class ListingContainer extends Component<ListProps, ListState> {
       if (!this.state.isError) {
         return (
           <div>
-            <h2>Getting the info...</h2>
+            <i>Getting the info...</i>
           </div>
         );
       } else {
         return (
           <div>
-            <h2>Could not get data.</h2>
-            <pre id="error"></pre>
+            <i>Could not get data.</i>
+            <br />
+            <i>
+              Check your <b>DevTools console</b> for more details.
+            </i>
           </div>
         );
       }

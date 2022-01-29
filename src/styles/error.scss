@@ -1,0 +1,20 @@
+div.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div.error {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .error-icon {
+      font-size: 50px;
+    }
+  }
+
+  button {
+    padding: 5px;
+  }
+}

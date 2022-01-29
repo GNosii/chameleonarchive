@@ -1,0 +1,7 @@
+{
+  "$schema": "./chameleon.scheme.json",
+  "Chameleon": {},
+  "External": {
+    "SkinProvider": ""
+  }
+}
