@@ -1,7 +1,11 @@
 {
   "$schema": "./chameleon.scheme.json",
-  "Chameleon": {},
+  "Chameleon": {
+    "Files": {
+      "Homepage": "homepage.md"
+    }
+  },
   "External": {
-    "SkinProvider": ""
+    "SkinProvider": "https://crafatar.com/renders/body/"
   }
 }

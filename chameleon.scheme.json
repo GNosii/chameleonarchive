@@ -4,7 +4,8 @@
   "properties": {
     "Chameleon": {
       "description": "Configuration regarding the frontend itself.",
-      "type": "object"
+      "type": "object",
+      "properties": {}
     },
     "External": {
       "description": "Configuration regarding third parties (skin providers, and more).",
