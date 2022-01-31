@@ -1,9 +1,6 @@
 import { Component } from 'react';
 import { read_cookie } from 'sfcookies';
 
-import ListProps from '../interfaces/props/list/ListProps';
-import ListState from '../interfaces/states/ListState';
-
 import TownItem from '../components/list/TownItem';
 import ResidentItem from '../components/list/ResidentItem';
 import NationItem from '../components/list/NationItem';
@@ -31,7 +28,6 @@ export default class ListingContainer extends Component<ListProps, ListState> {
     await fetch(endpoint)
       .then(async (res) => await res.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           data: data.list,
           isError: false,
@@ -113,4 +109,15 @@ export default class ListingContainer extends Component<ListProps, ListState> {
       }
     }
   }
+}
+
+interface ListState {
+  data: any;
+  isError: boolean;
+}
+
+interface ListProps {
+  name?: string;
+  endpoint: string;
+  type: string;
 }

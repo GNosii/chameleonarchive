@@ -1,7 +1,5 @@
 import { Component } from 'react';
 
-import { TownItemProps } from '../../interfaces/props/list/TownItemProps';
-
 export default class TownItem extends Component<TownItemProps> {
   render() {
     return (
@@ -26,4 +24,10 @@ export default class TownItem extends Component<TownItemProps> {
       </div>
     );
   }
+}
+
+interface TownItemProps {
+  townName: string;
+  townNation: string;
+  townMayor: string;
 }

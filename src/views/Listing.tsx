@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
 import ListingContainer from '../components/ListingContainer';
-import ListingViewProps from '../interfaces/props/views/ListingViewProps';
 
 export default class Listing extends Component<ListingViewProps> {
   render() {
@@ -15,4 +14,10 @@ export default class Listing extends Component<ListingViewProps> {
       </div>
     );
   }
+}
+
+interface ListingViewProps {
+  name: string;
+  type: string;
+  dataEndpoint: string;
 }

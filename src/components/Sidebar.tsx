@@ -2,17 +2,12 @@ import { Component } from 'react';
 
 import $ from 'cash-dom';
 
-import IProps from '../interfaces/props/IProps';
-import IState from '../interfaces/states/IState';
-
 import '../styles/sidebar.scss';
 
 import { isMobile } from 'react-device-detect';
 
-// TODO RESPONSIVE
-// ON MOBILE DO NOT START WITH THIS OPEN!!
-class Sidebar extends Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class Sidebar extends Component<{}, SidebarState> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       visible: true,
@@ -98,4 +93,6 @@ class Sidebar extends Component<IProps, IState> {
   }
 }
 
-export default Sidebar;
+interface SidebarState {
+  visible: boolean;
+}

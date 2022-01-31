@@ -2,10 +2,7 @@ import { Component } from 'react';
 
 import ReactMarkdown from 'react-markdown';
 
-import MarkdownComponentProps from '../interfaces/props/MarkdownComponentProps';
-import MarkdownComponentState from '../interfaces/states/MarkdownComponentState';
-
-import Error from '../views/commonview/Error';
+import Error from '../views/Error';
 
 export default class MarkdownComponent extends Component<
   MarkdownComponentProps,
@@ -38,4 +35,12 @@ export default class MarkdownComponent extends Component<
       </div>
     );
   }
+}
+
+interface MarkdownComponentState {
+  data: string;
+}
+
+interface MarkdownComponentProps {
+  mdLink: string;
 }

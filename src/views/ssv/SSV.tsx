@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { bake_cookie } from 'sfcookies';
 
-import SSVViewProps from '../../interfaces/props/views/SSVViewProps';
 import { createToast } from '../../scripts/Globals';
+
+import '../../styles/form.scss';
 
 export default class SSV extends Component<SSVViewProps> {
   handleSubmit(event: any) {
@@ -28,18 +29,28 @@ export default class SSV extends Component<SSVViewProps> {
     console.debug('[DebugParams] Params are ' + params);
 
     if (params.has('api')) return String(params.get('api'));
-    else return 'https://sometownyserver.com/api/';
+    else return 'Copy & paste the API server URL';
   }
 
   render() {
     return (
-      <div>
+      <div className="form-container">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="url">What API base should we use?</label>
-          <input type="url" id="url" defaultValue={this.getUrl()}></input>
+          <input
+            type="url"
+            id="baseUrl"
+            defaultValue={this.getUrl()}
+            required
+          />
+          <label htmlFor="baseUrl">Base API Url you were given</label>
+
           <input type="submit"></input>
         </form>
       </div>
     );
   }
+}
+
+interface SSVViewProps {
+  urlTo: string;
 }
