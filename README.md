@@ -1,6 +1,9 @@
 # Chameleon
+## The TownyUI project has been sunset.
+Due to personal reasons and high complexity, the TownyUI project has been sunset as of March 24, 2022. Any program may use its code as an reference or as an starting point for itself. While the project is mostly working, it's missing quite a lot of features, feel free to fork it and continue it.
+- GNosii
 
-![Netlify](https://img.shields.io/netlify/1c3035ce-cb51-4831-a949-bfceed663e3f?style=flat-square)
+---
 
 _React-based frontend for TownyUI._
 
